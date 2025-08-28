@@ -1,0 +1,88 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", Arial, sans-serif;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #d9e0f7;
+}
+
+
+/* Hover et Actif */
+.menu li a:hover {
+  background: #444;
+}
+
+/* Contenu */
+.content {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.content h1 {
+  font-size: 60px;
+  text-align: center;
+  line-height: 1.2;
+  color: #000;
+}
+
+.content h1 span {
+  font-weight: bold;
+  letter-spacing: 3px;
+  
+}
+
+/* Burger Button (mobile uniquement) */
+.burger {
+  display: none;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  font-size: 28px;
+  color: #000;
+  cursor: pointer;
+  z-index: 1100;
+}
+
+/* ✅ Responsive */
+@media (max-width: 900px) {
+  .sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    transform: translateX(-100%);
+  }
+
+  .sidebar.open {
+    transform: translateX(0);
+    box-shadow: 2px 0 10px rgba(0,0,0,0.3);
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .content h1 {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 500px) {
+  .menu li a span {
+    display: none; /* On cache le texte sur très petits écrans */
+  }
+
+  .menu li a {
+    justify-content: center;
+  }
+}
